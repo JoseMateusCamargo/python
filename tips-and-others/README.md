@@ -2,7 +2,7 @@
 
 # Python
 
-## Dicas e Truques
+## Dicas
 
 - Renomeando arquivo.
 - _List Comprehensions_, ler arquivo em um linha de codigo.
