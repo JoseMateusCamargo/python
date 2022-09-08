@@ -15,9 +15,23 @@
 - Atribuição de múltiplas variávies.
 - Trocar valor de 02 variávies.
 - Print _N_ vezes uma string.
-- _Palindrome_, reverter string (palindrome)
+- _Palindrome_, reverter string (palindrome).
+- Formar `string` a partir dos elementos de uma `lista`.
+- Armazenar elementos de uma `lista` diretamente em variávies.
+- `swapcase()` o método retorna uma string onde todas as letras maiúsculas são minúsculas e vice-versa.
 
 ---
+
+**Renomeando arquivo**
+
+```python
+import os
+
+old_name = r"details.txt"
+new_name = r"new_details.txt"
+
+os.rename(old_name, new_name)
+```
 
 **_List Comprehensions_, ler arquivo em um linha de codigo**
 
@@ -114,4 +128,26 @@ print(
     f"Normal: {string[::1]}\n"
     f"Reverse: {string[::-1]}"
 )
+```
+
+**Formar `string` a partir dos elementos de uma `lista`**
+
+```python
+list_join = ['One', 'Second', 'Third']
+print(" ".join(list_join))
+```
+
+**Armazenar elementos de uma `lista` diretamente em variávies**
+
+```python
+list_example = [12, -44, -2]
+max_, min_, med_ = list_example
+print(max_, min_, med_)
+```
+
+**`swapcase()` o método retorna uma string onde todas as letras maiúsculas são minúsculas e vice-versa**
+
+```python
+string_swap = 'AsSssS'
+print(string_swap.swapcase())
 ```
