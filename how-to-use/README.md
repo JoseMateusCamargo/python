@@ -4,16 +4,16 @@
 
 ## How to Use
 
-- Usando **Generators**.
+- Usando **generators**.
 - Usando função `filter` com lambda.
 - Usando função `map`.
 - _Métodos_ usado em uma `lista`.
 - Como passar uma lista como um _argumento_ usando `argparse`.
-- Dominando **Dicionários**.
+- Dominando **dicionários**.
 
 ---
 
-**Usando Generators**
+**Usando generators**
 
 `getsizeof` retorna o tamanho de um objeto em bytes. O objeto pode ser qualquer tipo de objeto. Todos os objetos
 internos retornarão resultados corretos, mas isso não precisa ser verdadeiro para extensões de terceiros,
@@ -82,7 +82,7 @@ print(' '.join(map(str, value.list)))
 # output: ['one', 'second']
 ```
 
-**Dominando Dicionários**
+**Dominando dicionários**
 
 ```Python
 # Criando um dicionario
