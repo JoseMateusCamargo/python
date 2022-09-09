@@ -27,10 +27,10 @@
 ```python
 import os
 
-old_name = r"details.txt"
-new_name = r"new_details.txt"
 
-os.rename(old_name, new_name)
+def rename_file(file, new_file):
+    os.rename(file, new_file)
+    print(f'\nRename {file} to {new_file}')
 ```
 
 **_List Comprehensions_, ler arquivo em um linha de codigo**
