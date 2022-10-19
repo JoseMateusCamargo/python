@@ -14,6 +14,8 @@
 - Lendo arquivo Excel `.xlsx`
 - [`drop_duplicates` Excluir linhas duplicadas.](https://github.com/JoseMateusCamargo/python/blob/main/pandas/how_to_drop_duplicate_rows.py)
 - [Selecionando linhas duplicadas.](https://github.com/JoseMateusCamargo/python/blob/main/pandas/get_list_all_duplicate_row.py)
+- Utilidade publica
+    - **Relação de comandos** (Power Query - SQL - Pandas/ Numpy - R)
 
 ---
 
@@ -117,6 +119,4 @@ df.head(5)
 
 Utilidade publica
 
-
-
-
+![Alt text](img/1655306425692.jpg "Utilidade publica")
