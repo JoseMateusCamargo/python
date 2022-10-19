@@ -4,6 +4,8 @@
 
 ## How to Use
 
+#### _Let's Code!_
+
 - Usando **generators**.
 - Usando função `filter` com lambda.
 - Usando função `map`.
