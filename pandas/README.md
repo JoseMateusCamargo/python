@@ -1,6 +1,10 @@
-# Funções que mais uso
+<img src="https://i.ibb.co/M6nBBb0/mascote.png" align="right" width="130">
 
-### Pandas
+# Python
+
+## Pandas
+
+#### _Let's Code!_
 
 - Como excluir linhas com base em valores de coluna
     - Excluir linhas com base em vários valores de coluna.
