@@ -5,7 +5,6 @@
 ## Interview questions
 
 Scripts com questões utilizadas em entrevistas técnicas.
-Scripts com questões utilizadas em entrevistas técnicas.
 
 #### _Let's Code!_
 
