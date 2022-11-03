@@ -1,8 +1,8 @@
-<img src="https://i.ibb.co/M6nBBb0/mascote.png" align="right" width="150">
+<img src="https://i.ibb.co/M6nBBb0/mascote.png" align="right" width="130">
 
 # Python
 
-## How to Use
+## How to Use (manual)
 
 #### _Let's Code!_
 
