@@ -15,13 +15,6 @@ text = "vida estamos online amore carreira carreiras três copos de café () $ #
 print()
 
 
-# ------------------- [] Remover tags html do texto
-def strip_html_tags():
-    soup = BeautifulSoup(text, "html.parser")
-    result = soup.get_text(separator=" ")
-    return print('Remover tags html: ', result)
-
-
 # ------------------- [] Remove extra whitespaces from text
 def remove_whitespace():
     result = text.strip()

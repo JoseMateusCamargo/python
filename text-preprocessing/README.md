@@ -1,32 +1,33 @@
-<img src="https://i.ibb.co/M6nBBb0/mascote.png" align="right" width="225">
+<img src="https://i.ibb.co/M6nBBb0/mascote.png" align="right" width="130">
 
-# Text Preprocessing in Python
+# Text Preprocessing
 
-O pré-processamento é tradicionalmente um passo importante para tarefas de processamento de linguagem natural (NLP). Ele
-transforma o texto em uma forma mais digerível para que os algoritmos de aprendizado de máquina possam ter um desempenho
-melhor.
+O **pré-processamento** é tradicionalmente um passo importante para tarefas de processamento de linguagem natural (NLP).
+Ele transforma o texto em uma forma mais digerível para que os algoritmos de aprendizado de máquina possam ter um
+desempenho melhor.
 
 Em qualquer tarefa de aprendizado de máquina, limpar ou pré-processar os dados é tão importante quanto a construção do
 modelo, se não mais. E quando se trata de dados não estruturados, como texto, esse processo é ainda mais importante.
 
-Algumas das etapas comuns de pré-processamento/limpeza de texto são:
+#### _Let's code_
+
+Algumas das etapas comuns de pré-processamento/ limpeza de texto são:
 
 * Lower casing ✔
 * Removal of Punctuations ✔
 * Removal of Stopwords ✔
 * Removal of Frequent words ✔
 * Removal of Rare words
-* Stemming ✔
-* Lemmatization ✔
+* **Stemming** ✔
+* **Lemmatization** ✔
 * Removal of emojis ✔
-* Removal of emoticons
-* Conversion of emoticons to words
-* Conversion of emojis to words ✔
+* Conversion of Emoji to Words ✔
 * Removal of URLs ✔
 * Removal of HTML tags ✔
-* Chat words conversion
-* Spelling correction
+* Spelling Correction
 * Removal of numbers ✔
+* Remove whitespaces
+* **Tokenization**
 
 É preciso escolher cuidadosamente as etapas de pré-processamento com baseem nosso caso de uso, pois isso também
 desempenha um papel importante. Por exemplo, no caso de uso de análise de sentimento, não precisamos remover os emojis
@@ -35,9 +36,7 @@ decidir com base em nossos casos de uso.
 
 ---
 
-#### Let's code
-
-### Lower casing
+**Lower casing**
 
 ````python
 input_str = "The 5 biggest countries by population in 2017 are China, India, United States, Indonesia, and Brazil"
@@ -46,7 +45,7 @@ print(input_str)
 # the 5 biggest countries by population in 2017 are china, india, united states, indonesia, and brazil.
 ````
 
-### Removal of Punctuations
+**Removal of Punctuations**
 
 Removendo este conjunto de símbolos !"#$%&\'()*+,-./:;<=>?@[\\]^_{|}~`:
 
@@ -59,13 +58,12 @@ result = input_str.translate(str.maketrans("", "", PUNCT_TO_REMOVE))
 print(result)  # This is an example of string with punctuation
 ```
 
-### Removal of stopwords
+**Removal of stopwords**
 
 "Palavras de parada" são as palavras mais comuns em um idioma como "o", "a", "on", "é", "todos". Essas palavras não
 carregam significados importantes e geralmente são removidas dos textos. É possível remover palavras de parada usando o
 Natural Language Toolkit (NLTK), um conjunto de bibliotecas e programas para processamento simbólico e estatístico de
-linguagem
-natural. [<b>Clique aqui para saber mais.</b>](https://github.com/JoseMateusCamargo/python/blob/master/stop-words/README.md)
+linguagem natural. [<b>Clique aqui para saber mais.</b>](../stop-words/README.md)
 
 ```python
 from nltk.tokenize import word_tokenize
@@ -88,7 +86,7 @@ result = [token for token in tokens if token not in STOPWORDS]
 print(result)  # ['Nick', 'likes', 'play', 'football', ',', 'however', 'fond', 'tennis', '.']
 ```
 
-### Removal of Frequent words
+**Removal of Frequent words**
 
 Na etapa de pré-processamento anterior, removemos as palavras irrelevantes com base nas informações do idioma. Mas
 digamos, se tivermos um corpus específico de domínio, também podemos ter algumas palavras frequentes que não são tão
@@ -120,7 +118,7 @@ print(remove_freq_words(input_str))
 # The 5 biggest countries by in are China, India, United States, Indonesia, and Brazil
 ```
 
-### Stemming
+**Stemming**
 
 Stemming é o processo de redução de palavras flexionadas (ou às vezes derivadas) ao seu radical, base ou
 raiz ([Wikipedia](https://en.wikipedia.org/wiki/Stemming))
@@ -163,7 +161,7 @@ print(SnowballStemmer.languages)
  'portuguese', 'romanian', 'russian', 'spanish', 'swedish')
 ```
 
-### Lemmatization
+**Lemmatization**
 
 Lemmatization é semelhante à Stemming ao reduzir as palavras flexionadas ao radical da palavra, mas difere na maneira
 como garante que a palavra raiz (também chamada de lemma) pertence ao idioma. Como resultado, este é geralmente mais
@@ -242,11 +240,10 @@ def lemmatize_words(text):
 print(lemmatize_words(word))  # opening driver stripe
 ```
 
-### Removal of Emojis
+**Removal of Emojis**
 
 Com cada vez mais uso de plataformas de mídia social, há uma explosão no uso de emojis em nosso dia a dia também.
-Provavelmente, talvez precisemos remover esses emojis para algumas de nossas análises
-textuais. [F](https://stackoverflow.com/a/49146722/330558)
+Provavelmente, talvez precisemos remover esses emojis para algumas de nossas análises textuais.
 
 ```python
 import re
@@ -268,7 +265,7 @@ print(remove_emoji("game is on 🔥🔥, Hilarious😂"))  # game is on , Hilari
 
 ```
 
-### Conversion of Emoji to Words
+**Conversion of Emoji to Words**
 
 😀 is an emoji
 
@@ -280,7 +277,7 @@ con = e.demojize(text)
 print(con)  # I am a coder :smiling_face_with_sunglasses:
 ```
 
-### Removal of URLs
+**Removal of URLs**
 
 ```python
 import re
@@ -299,7 +296,7 @@ def remove_urls_2(text):
     return re.sub(r'https?://\S+|www\.\S+', '', text, flags=re.MULTILINE)  # Please refer to link  for the paper
 ```
 
-### Removal of HTML Tags
+**Removal of HTML Tags**
 
 Podemos acabar tendo strings html como parte do nosso texto.
 
@@ -314,7 +311,7 @@ def remove_html(text):
     return html_pattern.sub(r'', text)
 ```
 
-Também podemos usar o pacote BeautifulSoup para obter o texto do documento HTML de uma maneira mais elegante.
+Também podemos usar o pacote `BeautifulSoup` para obter o texto do documento HTML de uma maneira mais elegante.
 
 ```python
 from bs4 import BeautifulSoup
@@ -332,7 +329,7 @@ def strip_html_tags_2(text):
     return print('Remover tags html: ', result)
 ```
 
-### Spelling Correction
+**Spelling Correction**
 
 Uma outra etapa importante de pré-processamento de texto é a correção ortográfica. Erros de digitação são comuns em
 dados de texto e talvez queiramos corrigir esses erros de ortografia antes de fazermos nossa análise. Vamos usar o
@@ -367,7 +364,7 @@ text = "casro messagem cachoro"
 print(correct_spellings(text))  # carro mensagem cachorro
 ````
 
-### Remove numbers
+**Remove numbers**
 
 Remova os números se eles não forem relevantes para suas análises. Normalmente, expressões regulares são usadas para
 remover números.
@@ -380,7 +377,7 @@ result = re.sub(r'\d+', '', input_str)
 print(result)  # Box A contains red and white balls, while Box B contains red and blue balls.
 ```
 
-### Remove whitespaces
+**Remove whitespaces**
 
 Para remover espaços iniciais e finais, você pode usar a função strip()
 
@@ -391,9 +388,9 @@ print(input_str)
 # `a string example`
 ```
 
----
-
-### Tokenization
+**Tokenization**
 
 Tokenização é o processo de dividir o texto fornecido em pedaços menores chamados tokens. Palavras, números, sinais de
 pontuação e outros podem ser considerados como tokens.
+
+## Fim
